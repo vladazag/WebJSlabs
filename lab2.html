@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Загребельна лаб 6-9</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-  <script src="scripts/lab2.js"></script>
 </head>
+
 <body>
   <header class="row">
     <h1>Лабораторна робота №2 JavaScript</h1>
@@ -20,15 +22,89 @@
       <a href="lab3.html">Лабораторна робота №3</a>
       <a href="lab4.html">Лабораторна робота №4</a>
     </nav>
-    <content class="row col-11">
-      <article>
+    <content class="col-11">
+      <article class="task">
         <h3>Завдання на лабораторну роботу</h3>
-        <p>Створити</p>
+        <p>Додати до розробленої у першій лабораторній роботі сторінки головне меню, яке буде реалізовувати виклики
+          сторінок з лабораторними роботами 2,3. Розробити дизайн веб-сторінки для лабораторної роботи № 2 та написати
+          JavaScript для вирішення поставленого завдання відповідно до варіанту. Розроблена HTML-сторінка повинна
+          відповідати таким вимогам:
+        <ul>
+          <li>Таблиці стилів повинні розташовуватися в окремих файлах. </li>
+          <li>Верстка повинна бути адаптивною. </li>
+          <li>Скрипти для виконання завдань повинні бути розміщені у окремих файлах. </li>
+        </ul>
+        </p>
+        <p>HTML-сторінка повинна містити:
+        <ul>
+          <li>&quot;шапку&quot;, що містить ПІБ студента, номер групи і номер варіанту; </li>
+          <li>опис завдань відповідно до варіанту;</li>
+          <li>єдине стилістичне оформлення з головної сторінкою. </li>
+        </ul>
+        </p>
+        <p><b>Завдання 1.</b> Дано блок з кнопкою 'закрити блок'. При натисканні на цю кнопку блок повинен
+          зникнути з форми. Кнопка розміщується всередині блоку і повинна зникнути разом з ним. Блоків може бути
+          будь-яка кількість, допускається щоб один з блоків був всередині іншого. Кожен блок закриває своя кнопка.</p>
+        <p><b>Завдання 2.</b> Дана таблиця з числами. При натисканні на комірку, вона активується і стає червоного
+          кольору. Активувати можна багато комірок. Під таблицею кнопка. При натисканні цієї кнопки в абзац нижче
+          виведіть суму активованих комірок. Реалізуйте також кнопку є 'скинути активовані комірки'.</p>
       </article>
-      <article>
-        <h3>Результат</h3>
+      <article class="result">
+        <h3>Результат. Завдання 1</h3>
+        <div class="result1">
+          <div class="close-block bk1">
+            <p>Перший блок</p>
+            <button class="close-btn">Закрити блок</button>
+            <div class="close-block">
+              <p>Другий блок</p>
+              <button class="close-btn">Закрити блок</button>
+            </div>
+          </div>
+          <div class="close-block">
+            <p>Третій блок</p>
+            <button class="close-btn">Закрити блок</button>
+          </div>
+          <button class="open-btn">Відкрити всі блоки</button>
+        </div>
+
+        <h3>Результат. Завдання 2</h3>
+        <div class="result2">
+          <table class="num-table">
+            <tr>
+              <td>5</td>
+              <td>3</td>
+              <td>8</td>
+              <td>2</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>7</td>
+              <td>1</td>
+              <td>9</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>2</td>
+              <td>5</td>
+              <td>4</td>
+              <td>7</td>
+            </tr>
+          </table>
+
+          <p id="sum-result"></p>
+          <button id="sum-btn">Порахувати суму</button>
+
+          <button id="reset-btn">Скинути активовані комірки</button>
+        </div>
+
       </article>
     </content>
   </main>
+
+  <script src="scripts/lab2.1.js"></script>
+  <script src="scripts/lab2.2.js"></script>
 </body>
+
 </html>

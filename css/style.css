@@ -18,6 +18,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 content {
@@ -76,4 +77,36 @@ button {
     border: 0;
     border-radius: 5px;
     padding: 10px 25px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.close-block {
+    width: fit-content;
+    border: 3px solid #0D428B;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.result1 {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+table {
+    border: 3px solid #0D428B;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+th,
+td {
+    border: 3px solid #0D428B;
+    padding: 5px 25px;
+}
+
+.active {
+    background-color: #0D428B;
+    color: #FFCBBF;
 }
