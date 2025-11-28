@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+    background-color: #FFCBBF;
+    color: #0D428B;
+    font-family: "Roboto Slab", serif;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0 20px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    font-size: 20px;
+    color: #0D428B;
+    text-decoration: none;
+    padding: 20px 0 0 0;
+    white-space: nowrap;
+}
+
+.selected,
+a:hover {
+    font-weight: bold;
+}
+
+a.selected {
+    position: relative;
+}
+
+a.selected::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #0D428B;
+    bottom: -10px;
+    left: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    color: #FFCBBF;
+    background-color: #0D428B;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 25px;
+    width: fit-content;
+    height: fit-content;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    border: 1px solid #0D428B;
+    border-radius: 5px;
+}
