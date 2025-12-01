@@ -2,13 +2,63 @@
 const subjects = ["Проєктування ІС", "Бази даних та знань", "Soft Skills", "Англійська мова"];
 
 // Початок пари
-const startTimes = ["09:00", "10:30", "12:10", "13:40"];
+const startTimes = ["09:00", "10:30", "12:10", "15:20"];
 
 // Прізвища викладачів
 const teachers = ["Федусенко", "Хлевний", "", "Півкач"];
 
 // Тривалість пари, хв
 const duration = 80;
+
+// Створення таблиці розкладу
+function renderSchedule() {
+    const container = document.getElementById("schedule");
+    const table = document.createElement("table");
+    const headerRow = document.createElement("tr");
+
+    const th1 = document.createElement("th");
+    th1.textContent = "№";
+    headerRow.appendChild(th1);
+
+    const th2 = document.createElement("th");
+    th2.textContent = "Предмет";
+    headerRow.appendChild(th2);
+
+    const th3 = document.createElement("th");
+    th3.textContent = "Початок";
+    headerRow.appendChild(th3);
+
+    const th4 = document.createElement("th");
+    th4.textContent = "Викладач";
+    headerRow.appendChild(th4);
+
+    table.appendChild(headerRow);
+
+    // заповнення rows 
+    for (let i = 0; i < subjects.length; i++) {
+        const row = document.createElement("tr");
+
+        const cell1 = document.createElement("td");
+        cell1.textContent = i + 1;
+        row.appendChild(cell1);
+
+        const cell2 = document.createElement("td");
+        cell2.textContent = subjects[i];
+        row.appendChild(cell2);
+
+        const cell3 = document.createElement("td");
+        cell3.textContent = startTimes[i];
+        row.appendChild(cell3);
+
+        const cell4 = document.createElement("td");
+        cell4.textContent = teachers[i] !== "" ? teachers[i] : "Не вказано";
+        row.appendChild(cell4);
+
+        table.appendChild(row);
+    }
+
+    container.appendChild(table);
+}
 
 // Переведення у хв
 function toMinutes(time) {
@@ -72,8 +122,7 @@ function getLessonInfo() {
     output.textContent = message;
 }
 
-// Обробник кліка
 document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("get_lesson_info");
-    btn.addEventListener("click", getLessonInfo);
+    renderSchedule();
+    document.getElementById("get_lesson_info").addEventListener("click", getLessonInfo);
 });

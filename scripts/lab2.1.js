@@ -1,20 +1,36 @@
-// Всі кнопки
-const buttons = document.querySelectorAll(".close-btn");
+document.addEventListener("DOMContentLoaded", function () {
+    // кнопки закриття
+    const buttons = document.querySelectorAll(".close-btn");
 
-// Обробники кліків
-buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        const block = this.parentElement;
-        block.style.display = "none";
+    function isVisible(el) {
+        return getComputedStyle(el).display !== "none";
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const block = this.parentElement;
+
+            const innerBlocks = block.querySelectorAll(".close-block");
+
+            let hasOpenInner = false;
+            innerBlocks.forEach(function (b) {
+                if (isVisible(b)) {
+                    hasOpenInner = true;
+                }
+            });
+
+            if (hasOpenInner) {
+                return;
+            }
+
+            block.style.display = "none";
+        });
     });
-});
 
-// Відкриття всіх блоків
-const openButton = document.querySelector(".open-btn");
-
-openButton.addEventListener("click", function () {
-    const blocks = document.querySelectorAll(".close-block");
-    blocks.forEach(function (block) {
-        block.style.display = "block";
+    // кнопка відкриття блоків
+    const openButton = document.querySelector(".open-btn");
+    openButton.addEventListener("click", () => {
+        document.querySelectorAll(".close-block")
+            .forEach(block => block.style.display = "block");
     });
 });

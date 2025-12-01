@@ -80,3 +80,15 @@ button {
     width: fit-content;
     height: fit-content;
 }
+
+table {
+    border: 3px solid #0D428B;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+th,
+td {
+    border: 3px solid #0D428B;
+    padding: 5px 25px;
+}
